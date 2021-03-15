@@ -1,0 +1,48 @@
+@-webkit-keyframes rainbow {
+  0%{transform: rotate(0deg);}
+  100%{transform: rotate(360deg);}
+}
+
+$border: 5px;
+
+body {
+  background-color: #0c0c0c;
+}
+.container {
+  width: 503px;
+  height: 310px;
+  margin: calc(50vh - 150px) auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box {
+  background-color: black;
+  width: 500px;
+  height: 300px;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  background-clip: padding-box; 
+  border: solid $border transparent;
+
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%; /* !importanté */
+    background: linear-gradient(90deg, rgba(218,11,11,1) 0%, rgba(221,128,21,1) 14%, rgba(237,235,18,1) 28%, rgba(48,191,15,1) 43%, rgba(9,197,232,1) 55%, rgba(11,22,230,1) 70%, rgba(121,11,230,1) 88%);
+    animation: rainbow 5s linear infinite;
+    
+}
+
+}
